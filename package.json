@@ -4,21 +4,19 @@
   "description": "Backend application for video conferencing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProHubOffl/prohub_video_chat_server.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ProHubOffl/prohub_video_chat_server/issues"
-  },
-  "homepage": "https://github.com/ProHubOffl/prohub_video_chat_server#readme",
+  "homepage": "",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "socket.io": "^4.5.1"
+    "socket.io": "^2.3.0"
   }
 }

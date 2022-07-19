@@ -1,20 +1,23 @@
 const express = require('express')
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
 const path = require('path');
 const cors = require('cors');
+const io = require('socket.io')(http, {
+	cors: {
+		origin: "http://localhost:3000",
+		methods: [ "GET", "POST" ],
+    allowedHeaders: ["*"],
+    credentials: true
+	},
+  allowEIO3: true
+});
 
 const PORT = process.env.PORT || 3001;
 
 let socketList = {};
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors({
-    origin: ['http://localhost:3000'],
-    methods: ['GET', 'POST'],
-    credentials:true
-}))
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
